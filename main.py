@@ -48,29 +48,26 @@ def education_lvl(callback):
         markup.add(types.InlineKeyboardButton(Bachelor[1], callback_data="Математика и Информатика"))
         markup.add(types.InlineKeyboardButton(Bachelor[2], callback_data="Математика и Физика"))
         bot.edit_message_text(f"""Прекрасный выбор! {Bachelor[0]}. 
-Выберите направление: """, callback.message.chat.id, callback.message.message_id, reply_markup=markup)
+Выберите направление: """, callback.from_user.message.id, callback.message.message_id, reply_markup=markup)
     if callback.data == "Магистратура":
         markup.add(types.InlineKeyboardButton(Master[1],
                                               callback_data="Цифровизация"))
         bot.edit_message_text(f"""Прекрасный выбор! {Master[0]} 
-Выберите направление: """, callback.message.chat.id, callback.message.message_id, reply_markup=markup)
+Выберите направление: """, callback.from_user.message.id, callback.message.message_id, reply_markup=markup)
     if callback.data == "Аспирантура":
         markup.add(types.InlineKeyboardButton(Postgraduate[1],
                                               callback_data="Проф. обр"))
         markup.add(types.InlineKeyboardButton(Postgraduate[2],
                                               callback_data="Педагогика"))
         bot.edit_message_text(f"""Прекрасный выбор! {Postgraduate[0]} 
-Выберите направление: """, callback.message.chat.id, callback.message.message_id, reply_markup=markup)
+Выберите направление: """, callback.from_user.message.id, callback.message.message_id, reply_markup=markup)
+        bot.register_next_step_handler(callback, program)
 
 
-@bot.callback_query_handler(func=lambda callback_data: True)
-def programm(callback):
+def program(callback):
+    markup = types.InlineKeyboardMarkup()
     if callback.data == "Педагогика":
-        bot.edit_message_text("Hi", callback.message.chat.id, callback.message.message_id)
-
-
-def hi():
-    pass
+        bot.edit_message_text("Hi", callback.from_user.message.id, callback.message.message_id, reply_markup=markup)
 
 
 bot.infinity_polling()
