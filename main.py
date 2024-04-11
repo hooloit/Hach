@@ -10,14 +10,14 @@ a = "  "
 Bachelor = list()
 Master = list()
 Postgraduate = list()
-with open('base.json') as f:
+with open('base.json', encoding="utf-8") as f:
     templates = json.load(f)
 
-# a = templates[0]["question"][0]["На какой уровень образваония вы планируете поступать?"]["Бакалавриат"]
+# a = templates[0]["question"][0]["На какой уровень образования вы планируете поступать?"]["Бакалавриат"]
 
-Bachelor.append(templates[0]["question"][0]["На какой уровень образваония вы планируете поступать?"]["Бакалавриат"])
-Master.append(templates[0]["question"][0]["На какой уровень образваония вы планируете поступать?"]["Магистратура"])
-Postgraduate.append(templates[0]["question"][0]["На какой уровень образваония вы планируете поступать?"]["Аспирантура"])
+Bachelor.append(templates[0]["question"][0]["На какой уровень образования вы планируете поступать?"]["Бакалавриат"])
+Master.append(templates[0]["question"][0]["На какой уровень образования вы планируете поступать?"]["Магистратура"])
+Postgraduate.append(templates[0]["question"][0]["На какой уровень образования вы планируете поступать?"]["Аспирантура"])
 print(Bachelor[0], Master[0], Postgraduate[0])
 for i in templates[0]["question"][0]["Бакалавриат"]:
     Bachelor.append(i)
