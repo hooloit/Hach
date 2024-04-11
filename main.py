@@ -1,10 +1,35 @@
 import telebot
 from telebot import types
 from Bot_token import token
+import json
 
 bot = telebot.TeleBot(token)
+# Processing Data from a Database
+
+a = "  "
+Bachelor = list()
+Master = list()
+Postgraduate = list()
+with open('base.json') as f:
+    templates = json.load(f)
+
+# a = templates[0]["question"][0]["На какой уровень образваония вы планируете поступать?"]["Бакалавриат"]
+
+Bachelor.append(templates[0]["question"][0]["На какой уровень образваония вы планируете поступать?"]["Бакалавриат"])
+Master.append(templates[0]["question"][0]["На какой уровень образваония вы планируете поступать?"]["Магистратура"])
+Postgraduate.append(templates[0]["question"][0]["На какой уровень образваония вы планируете поступать?"]["Аспирантура"])
+print(Bachelor[0], Master[0], Postgraduate[0])
+for i in templates[0]["question"][0]["Бакалавриат"]:
+    Bachelor.append(i)
+
+for i in templates[0]["question"][0]["Магистратура"]:
+    Master.append(i)
+
+for i in templates[0]["question"][0]["Аспирантура"]:
+    Postgraduate.append(i)
 
 
+# TEGRAM BOT
 @bot.message_handler(commands=['help', 'start'])
 def greet(message):
     markup = types.InlineKeyboardMarkup()
@@ -20,21 +45,21 @@ def greet(message):
 def education_lvl(callback):
     markup = types.InlineKeyboardMarkup()
     if callback.data == "Бакалавриат":
-        markup.add(types.InlineKeyboardButton("Математика и Информатика", callback_data="Математика и Информатика"))
-        markup.add(types.InlineKeyboardButton("Математика и Физика", callback_data="Математика и Физика"))
-        bot.edit_message_text("""Прекрасный выбор! Подача документов будет возможна до 7 июля. 
+        markup.add(types.InlineKeyboardButton(Bachelor[1], callback_data="Математика и Информатика"))
+        markup.add(types.InlineKeyboardButton(Bachelor[2], callback_data="Математика и Физика"))
+        bot.edit_message_text(f"""Прекрасный выбор! {Bachelor[0]}. 
 Выберите направление: """, callback.message.chat.id, callback.message.message_id, reply_markup=markup)
     if callback.data == "Магистратура":
-        markup.add(types.InlineKeyboardButton("Цифровизация образования: проектирование, сопровождение, экспертиза",
+        markup.add(types.InlineKeyboardButton(Master[1],
                                               callback_data="Цифровизация"))
-        bot.edit_message_text("""Прекрасный выбор! Подача документов будет возможна до 22 августа. 
+        bot.edit_message_text(f"""Прекрасный выбор! {Master[0]} 
 Выберите направление: """, callback.message.chat.id, callback.message.message_id, reply_markup=markup)
     if callback.data == "Аспирантура":
-        markup.add(types.InlineKeyboardButton("Методология и технология профессионального образования",
+        markup.add(types.InlineKeyboardButton(Postgraduate[1],
                                               callback_data="Проф. обр"))
-        markup.add(types.InlineKeyboardButton("Общая педагогика, история педагогики и образования",
+        markup.add(types.InlineKeyboardButton(Postgraduate[2],
                                               callback_data="Педагогика"))
-        bot.edit_message_text("""Прекрасный выбор! Подача документов будет возможна до 20 августа. 
+        bot.edit_message_text(f"""Прекрасный выбор! {Postgraduate[0]} 
 Выберите направление: """, callback.message.chat.id, callback.message.message_id, reply_markup=markup)
 
 
