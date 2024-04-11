@@ -44,4 +44,8 @@ def programm(callback):
         bot.edit_message_text("Hi", callback.message.chat.id, callback.message.message_id)
 
 
+def hi():
+    pass
+
+
 bot.infinity_polling()
