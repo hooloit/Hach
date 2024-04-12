@@ -29,18 +29,19 @@ for i in range(2):
     for j in range(4):
         Directions_Bachelor[i][j] = templates[0]["main"][0]["Бакалавриат"][Faculty_Bachelor[i]][j]
 
+print(Directions_Bachelor)
+
 for i in range(2):
     for j in range(4):
         if Faculty_Master[i] == "Факультет психологии и педагогики":
             j + 2
             Directions_Master[i][j] = templates[0]["main"][0]["Магистратура"][Faculty_Master[i]][j]
-            if j == 2:
+            if j == 0:
                 break
         else:
             Directions_Master[i][j] = templates[0]["main"][0]["Магистратура"][Faculty_Master[i]][j]
-
-
-print(Directions_Master[1][3])
+a = templates[0]["main"][0]["Магистратура"][Faculty_Master[i]][j]
+print(*a)
 # for i in range(2):
 #     for j in range(4):
 #         Directions_Postgraduate[i][j] = templates[0]["main"][0]["Аспирантура"][Faculty_Postgraduate[i]][]
