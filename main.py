@@ -5,7 +5,7 @@ import json
 
 bot = telebot.TeleBot(token)
 # Processing Data from a Database
-
+b = "АХАХАХАХАХХАХАХААХХА"
 a = "  "
 Bachelor = list()
 Master = list()
@@ -29,6 +29,25 @@ for i in templates[0]["question"][0]["Магистратура"]:
 for i in templates[0]["question"][0]["Аспирантура"]:
     Postgraduate.append(i)
 
+Faculty_Bachelor = [['a'] * 4 for i in range(2)]
+
+Faculty_Master = [['a'] * 2 for i in range(2)]
+
+Faculty_Postgraduate = [['a'] * 6 for i in range(2)]
+
+for i in range(2):
+    for j in range(4): 
+        Faculty_Bachelor[i][j] = templates[0]["question"][0]["Бакалавриат"][Bachelor[i + 1]][j]
+
+for i in range(2):
+    for j in range(2): 
+        Faculty_Master[i][j] = templates[0]["question"][0]["Магистратура"][Master[1]][j]
+
+for i in range(2):
+    for j in range(6): 
+        Faculty_Postgraduate[i][j] = templates[0]["question"][0]["Аспирантура"][Postgraduate[i + 1]][j]
+
+
 
 # TEGRAM BOT
 @bot.message_handler(commands=['help', 'start'])
@@ -49,17 +68,9 @@ def education_lvl(callback):
     back = types.InlineKeyboardButton("Назад", callback_data="back")
     back_to_lvl = types.InlineKeyboardButton("Назад", callback_data="back_to_lvl")
     if callback.data == "Бакалавриат":
-<<<<<<< HEAD
         markup.add(types.InlineKeyboardButton(Bachelor[1], callback_data="Математика и Информатика"))
         markup.add(types.InlineKeyboardButton(Bachelor[2], callback_data="Математика и Физика"))
         bot.edit_message_text(f"""Прекрасный выбор! {Bachelor[0]}. 
-=======
-        MI = types.InlineKeyboardButton(Bachelor[1], callback_data="Математика и Информатика")
-        MP = types.InlineKeyboardButton(Bachelor[2], callback_data="Математика и Физика")
-        markup.add(MI, MP)
-        markup.add(back)
-        bot.edit_message_text(f"""Вы выбрали уровень: бакалавриат. {Bachelor[0]}. 
->>>>>>> b88cdea85fdd6eb0040a4ca3fe4159a4a7ce4657
 Выберите направление: """, callback.from_user.id, callback.message.message_id, reply_markup=markup)
     if callback.data == "Магистратура":
         back_to_lvl = types.InlineKeyboardButton("Назад", callback_data="Магистратура")
@@ -79,28 +90,28 @@ def education_lvl(callback):
 
     if callback.data == "Математика и Физика":
         markup.add(back_to_lvl)
-        bot.edit_message_text("""Вступительные испытания:
-– Русский язык (ЕГЭ, не менее 40 баллов)
-– Математика (ЕГЭ, не менее 39 баллов)
-– Физика
+        bot.edit_message_text(f"""{Faculty_Bachelor[1][0]}
+{Faculty_Bachelor[1][1]}
+{Faculty_Bachelor[1][2]}
+{Faculty_Bachelor[1][3]}
 Более подробная информация:
 https://www.surgpu.ru/Abitur/bachelor/""", callback.from_user.id, callback.message.message_id, reply_markup=markup)
 
     if callback.data == "Цифровизация":
         markup.add(back_to_lvl)
-        bot.edit_message_text("""Вступительное испытание – Профильный
-междисциплинарный экзамен (устно)
+        bot.edit_message_text(f"""{Faculty_Master[0][0]}
+{Faculty_Master[0][1]}
 Более подробная информация:
 https://www.surgpu.ru/Abitur/magistratura/""", callback.from_user.id, callback.message.message_id, reply_markup=markup)
 
     if callback.data == "Проф. обр":
         markup.add(back_to_lvl)
-        bot.edit_message_text("""– Специальная дисциплина, соответствующая
-направленности (профилю) программы
-подготовки научно-педагогических кадров в
-аспирантуре
-– Философия
-– Иностранный язык
+        bot.edit_message_text(f"""{Faculty_Postgraduate[0][0]}
+{Faculty_Postgraduate[0][1]}
+{Faculty_Postgraduate[0][2]}
+{Faculty_Postgraduate[0][3]}
+{Faculty_Postgraduate[0][4]}
+{Faculty_Postgraduate[0][5]}
 Более подробная информация:
 https://www.surgpu.ru/Abitur/aspirantura/""", callback.from_user.id, callback.message.message_id, reply_markup=markup)
 
