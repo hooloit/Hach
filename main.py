@@ -88,10 +88,10 @@ def education_lvl(callback):
         bot.register_next_step_handler(callback)
 
     if callback.data == "Математика и Информатика":
-        bot.edit_message_text("""Вступительные испытания:
-– Русский язык (ЕГЭ, не менее 40 баллов)
-– Математика (ЕГЭ, не менее 39 баллов)
-– Информатика и ИКТ
+        bot.edit_message_text(f"""{Faculty_Bachelor[0][0]}
+{Faculty_Bachelor[0][1]}
+{Faculty_Bachelor[0][2]}
+{Faculty_Bachelor[0][3]}
 Более подробная информация:
 https://www.surgpu.ru/Abitur/bachelor/""", callback.from_user.id, callback.message.message_id, reply_markup=markup)
 
@@ -123,11 +123,12 @@ https://www.surgpu.ru/Abitur/magistratura/""", callback.from_user.id, callback.m
 https://www.surgpu.ru/Abitur/aspirantura/""", callback.from_user.id, callback.message.message_id, reply_markup=markup)
 
     if callback.data == "Педагогика":
-        bot.edit_message_text("""– Специальная дисциплина, соответствующая
-направленности (профилю) программы
-подготовки научно-педагогических кадров в аспирантуре
-– Философия
-– Иностранный язык
+        bot.edit_message_text(f"""{Faculty_Postgraduate[1][0]}
+{Faculty_Postgraduate[1][1]}
+{Faculty_Postgraduate[1][2]}
+{Faculty_Postgraduate[1][3]}
+{Faculty_Postgraduate[1][4]}
+{Faculty_Postgraduate[1][5]}
 Более подробная информация
 https://www.surgpu.ru/Abitur/aspirantura/""", callback.from_user.id, callback.message.message_id, reply_markup=markup)
 
