@@ -96,6 +96,7 @@ def education_lvl(callback):
         bot.register_next_step_handler(callback)
 
     if callback.data == "Математика и Информатика":
+        markup.add(back_to_lvl)
         bot.edit_message_text(f"""{Faculty_Bachelor[0][0]}
 {Faculty_Bachelor[0][1]}
 {Faculty_Bachelor[0][2]}
