@@ -362,4 +362,155 @@ https://www.surgpu.ru/Abitur/aspirantura/""", callback.message.chat.id, callback
 Более подробная информация:
 https://www.surgpu.ru/Abitur/aspirantura/""", callback.message.chat.id, callback.message.message_id, reply_markup=markup)
 
+    # ------------------------------------------------------------------------------- Бакалавриат(1)
+    if callback.data == "Обж":
+        markup.add(back_to_vector)
+        bot.edit_message_text("""На базе среднего общего образования:
+- Русский язык (ЕГЭ)- 40
+- Обществознание (ЕГЭ) - 42
+- Профессиональное испытание - 50
+https://www.surgpu.ru/Abitur/bachelor/""", callback.message.chat.id, callback.message.message_id, reply_markup=markup)
+
+    if callback.data == "Адап. физ":
+        markup.add(back_to_vector)
+        bot.edit_message_text("""На базе среднего общего образования:
+Русский язык (ЕГЭ) - 40
+Обществознание (ЕГЭ) – 42 / Математика (ЕГЭ) - 39
+Профессиональное испытание - 50
+https://www.surgpu.ru/Abitur/bachelor/""", callback.message.chat.id, callback.message.message_id, reply_markup=markup)
+
+    if callback.data == "Биология":
+        markup.add(back_to_vector)
+        bot.edit_message_text("""На базе среднего общего образования:
+Русский язык (ЕГЭ) - 40
+Обществознание (ЕГЭ) - 42
+Биология и география - 40
+https://www.surgpu.ru/Abitur/bachelor/""", callback.message.chat.id, callback.message.message_id, reply_markup=markup)
+
+    if callback.data == "Оздар.":
+        markup.add(back_to_vector)
+        bot.edit_message_text("""На базе среднего общего образования:
+Русский язык (ЕГЭ)- 40
+Обществознание (ЕГЭ) - 42 / Математика (ЕГЭ) - 39
+Профессиональное испытание - 50
+https://www.surgpu.ru/Abitur/bachelor/""", callback.message.chat.id, callback.message.message_id, reply_markup=markup)
+# ---------------------------------------------------------------------------------------------- Бакалавриат(2)
+    if callback.data == "МатФиз":
+        markup.add(back_to_vector)
+        bot.edit_message_text("""На базе среднего общего образования:
+Математика (ЕГЭ) - 39
+Русский язык (ЕГЭ) - 40
+Профессиональное испытание - 40
+https://www.surgpu.ru/Abitur/bachelor/""", callback.message.chat.id, callback.message.message_id, reply_markup=markup)
+
+    if callback.data == "МатИнф":
+        markup.add(back_to_vector)
+        bot.edit_message_text("""На базе среднего общего образования:
+Математика (ЕГЭ) - 39
+Русский язык (ЕГЭ) - 40
+Профессиональное испытание - 42
+https://www.surgpu.ru/Abitur/bachelor/""", callback.message.chat.id, callback.message.message_id, reply_markup=markup)
+
+    if callback.data == "соцраб":
+        markup.add(back_to_vector)
+        bot.edit_message_text("""На базе среднего общего образования:
+Русский язык (ЕГЭ) - 40
+История (ЕГЭ) - 35
+Обществознание (ЕГЭ) - 42 / Литература (ЕГЭ) - 40
+https://www.surgpu.ru/Abitur/bachelor/""", callback.message.chat.id, callback.message.message_id, reply_markup=markup)
+
+    if callback.data == "Менеджмент":
+        markup.add(back_to_vector)
+        bot.edit_message_text("""На базе среднего общего образования:
+Русский язык (ЕГЭ) - 40
+Литература (ЕГЭ) - 40
+Обществознание (ЕГЭ) - 42 / История (ЕГЭ)- 35
+https://www.surgpu.ru/Abitur/bachelor/""", callback.message.chat.id, callback.message.message_id, reply_markup=markup)
+#-------------------------------------------------------------------------------------------------------- Магистратура(1)
+    if callback.data == "Физ. педагог":
+        markup.add(back_to_vector)
+        bot.edit_message_text("""Вступительное испытание – Профильный
+междисциплинарный экзамен (устно)
+Более подробная информация:
+https://www.surgpu.ru/Abitur/magistratura/""", callback.message.chat.id, callback.message.message_id, reply_markup=markup)
+
+    if callback.data == "Качеств":
+        markup.add(back_to_vector)
+        bot.edit_message_text("""Вступительное испытание – Профильный
+междисциплинарный экзамен (устно)
+Более подробная информация:
+https://www.surgpu.ru/Abitur/magistratura/""", callback.message.chat.id, callback.message.message_id, reply_markup=markup)
+
+    if callback.data == "Дошкольное":
+        markup.add(back_to_vector)
+        bot.edit_message_text("""Вступительное испытание – Профильный
+междисциплинарный экзамен (устно)
+Более подробная информация:
+https://www.surgpu.ru/Abitur/magistratura/""", callback.message.chat.id, callback.message.message_id, reply_markup=markup)
+
+    if callback.data == "Управ":
+        markup.add(back_to_vector)
+        bot.edit_message_text("""Вступительное испытание – Профильный
+междисциплинарный экзамен (устно)
+Более подробная информация:
+https://www.surgpu.ru/Abitur/magistratura/""", callback.message.chat.id, callback.message.message_id, reply_markup=markup)
+#----------------------------------------------------------------------------------------------------Магистратура(2)
+    if callback.data == "Развитие":
+        markup.add(back_to_vector)
+        bot.edit_message_text("""Вступительное испытание – Профильный
+междисциплинарный экзамен (устно)
+Более подробная информация:
+https://www.surgpu.ru/Abitur/magistratura/""", callback.message.chat.id, callback.message.message_id, reply_markup=markup)
+
+    if callback.data == "Цифра":
+        markup.add(back_to_vector)
+        bot.edit_message_text("""Вступительное испытание – Профильный
+междисциплинарный экзамен (устно)
+Более подробная информация:
+https://www.surgpu.ru/Abitur/magistratura/""", callback.message.chat.id, callback.message.message_id, reply_markup=markup)
+#-----------------------------------------------------------------------------------------------------Аспирантура
+    if callback.data == "Педаг-псих":
+        markup.add(back_to_vector)
+        bot.edit_message_text("""– Специальная дисциплина, соответствующая
+направленности (профилю) программы
+подготовки научно-педагогических кадров в
+аспирантуре
+– Философия
+– Иностранный язык
+Более подробная информация:
+https://www.surgpu.ru/Abitur/aspirantura/""", callback.message.chat.id, callback.message.message_id, reply_markup=markup)
+
+    if callback.data == "Соц.стр":
+        markup.add(back_to_vector)
+        bot.edit_message_text("""– Специальная дисциплина, соответствующая
+направленности (профилю) программы
+подготовки научно-педагогических кадров в
+аспирантуре
+– Философия
+– Иностранный язык
+Более подробная информация:
+https://www.surgpu.ru/Abitur/aspirantura/""", callback.message.chat.id, callback.message.message_id, reply_markup=markup)
+
+    if callback.data == "Физ.под":
+        markup.add(back_to_vector)
+        bot.edit_message_text("""– Специальная дисциплина, соответствующая
+направленности (профилю) программы
+подготовки научно-педагогических кадров в
+аспирантуре
+– Философия
+– Иностранный язык
+Более подробная информация:
+https://www.surgpu.ru/Abitur/aspirantura/""", callback.message.chat.id, callback.message.message_id, reply_markup=markup)
+
+    if callback.data == "Общ.пед":
+        markup.add(back_to_vector)
+        bot.edit_message_text("""– Специальная дисциплина, соответствующая
+направленности (профилю) программы
+подготовки научно-педагогических кадров в
+аспирантуре
+– Философия
+– Иностранный язык
+Более подробная информация:
+https://www.surgpu.ru/Abitur/aspirantura/""", callback.message.chat.id, callback.message.message_id, reply_markup=markup)
+
 bot.infinity_polling()
