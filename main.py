@@ -122,4 +122,6 @@ https://www.surgpu.ru/Abitur/aspirantura/""", callback.from_user.id, callback.me
         bot.delete_message(callback.message.chat.id, callback.message.message_id)
         greet(callback.message)
 
+def aaaa():
+    pass
 bot.infinity_polling()
