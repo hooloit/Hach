@@ -74,6 +74,8 @@ def education_lvl(callback):
         markup.add(back)
         bot.edit_message_text(f"""Вы выбрали уровень: бакалавриат. {Bachelor[0]}
 Выберите направление: """, callback.from_user.id, callback.message.message_id, reply_markup=markup)
+        
+#ubhsdfhyuigdsfaiuhdf
     if callback.data == "Магистратура":
         save = "Магистратура"
         DIG = types.InlineKeyboardButton(Master[1],
