@@ -124,6 +124,4 @@ https://www.surgpu.ru/Abitur/aspirantura/""", callback.from_user.id, callback.me
         bot.delete_message(callback.message.chat.id, callback.message.message_id)
         greet(callback.message)
 
-    if callback.data == "back_to_lvl":
-
 bot.infinity_polling()
