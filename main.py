@@ -13,7 +13,7 @@ Postgraduate = list()
 with open('base.json', encoding="utf-8") as f:
     templates = json.load(f)
 
-last_callback = ""
+
 
 # a = templates[0]["question"][0]["На какой уровень образования вы планируете поступать?"]["Бакалавриат"]
 
@@ -56,6 +56,7 @@ def education_lvl(callback):
         bot.edit_message_text(f"""Вы выбрали уровень: бакалавриат. {Bachelor[0]}. 
 Выберите направление: """, callback.from_user.id, callback.message.message_id, reply_markup=markup)
     if callback.data == "Магистратура":
+        last_ide = "Магистратура"
         back_to_lvl = types.InlineKeyboardButton("Назад", callback_data="Магистратура")
         markup.add(types.InlineKeyboardButton(Master[1],
                                               callback_data="Цифровизация"))
@@ -63,6 +64,7 @@ def education_lvl(callback):
         bot.edit_message_text(f"""Вы выбрали уровень: магистратура. {Master[0]}. 
 Выберите направление: """, callback.from_user.id, callback.message.message_id, reply_markup=markup)
     if callback.data == "Аспирантура":
+        last_ide = "Аспирантура"
         back_to_lvl = types.InlineKeyboardButton("Назад", callback_data="Аспирантура")
         markup.add(types.InlineKeyboardButton(Postgraduate[1],
                                               callback_data="Проф. обр"))
@@ -122,6 +124,6 @@ https://www.surgpu.ru/Abitur/aspirantura/""", callback.from_user.id, callback.me
         bot.delete_message(callback.message.chat.id, callback.message.message_id)
         greet(callback.message)
 
-def aaaa():
-    pass
+    if callback.data == "back_to_lvl":
+
 bot.infinity_polling()
