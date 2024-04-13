@@ -1,7 +1,7 @@
 
 <h1 align="center">Бот для помощи Абитуриент <a ></a> 
 <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
-<h2 align="center">Clowns++(Clowns.py)</h2>
+<h2 align="center">Clowns++</h2>
 
 ## Технологии
 - pyTelegramBotAPI
